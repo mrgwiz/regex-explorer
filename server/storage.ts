@@ -16,7 +16,7 @@ export interface IStorage {
   getProgressBySessionId(sessionId: string): Promise<Progress[]>;
   createProgress(progress: InsertProgress): Promise<Progress>;
   updateProgress(id: number, completed: boolean): Promise<Progress | undefined>;
-}q
+}
 
 // Memory storage implementation
 export class MemStorage implements IStorage {
