@@ -1,0 +1,162 @@
+[
+  {
+    "difficulty": "medium",
+    "instructions": "Match all words that contain a double letter (like 'book' or 'letter').",
+    "text": "The wood floor needs to be swept. The cool pool water is blue. I need to cook some food for dinner.",
+    "solution": "\\b\\w*([a-zA-Z])\\1\\w*\\b",
+    "hint": "Use capturing groups and backreferences to find repeated letters within word boundaries.",
+    "order": 1
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match valid URLs that start with http:// or https://",
+    "text": "Visit our site at https://regex-explorer.com or http://www.regex.dev. Don't go to ftp://invalid.com or just www.invalid-url.com",
+    "solution": "https?:\\/\\/[\\w\\.-]+\\.[a-zA-Z]{2,}[\\/\\w\\.-]*",
+    "hint": "Start with http or https followed by ://, then the domain name with at least one dot.",
+    "order": 2
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match all numbers (integers and decimals) in the text.",
+    "text": "The product costs $19.99, weighs 3.5 lbs, and we have 42 in stock. The dimensions are 10x12x5.25 inches.",
+    "solution": "\\b\\d+(?:\\.\\d+)?\\b",
+    "hint": "Look for one or more digits, optionally followed by a decimal point and more digits.",
+    "order": 3
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match all hexadecimal color codes (like #FFF or #FF00AA).",
+    "text": "Our brand colors are #2D5A27 (forest green), #8B4513 (cedar brown), #A8C090 (sage), and #F4F1DE (cream). Some designers also use shorthand like #000 for black.",
+    "solution": "#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})\\b",
+    "hint": "Look for # followed by either exactly 3 or exactly 6 hexadecimal characters (0-9, a-f, A-F).",
+    "order": 4
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match all words that are exactly 5 characters long.",
+    "text": "The quick brown fox jumps over the lazy dogs while they sleep peacefully.",
+    "solution": "\\b[a-zA-Z]{5}\\b",
+    "hint": "Use word boundaries and match exactly 5 alphabetical characters.",
+    "order": 5
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match all words starting and ending with the same letter.",
+    "text": "Level up your stats when you recognize how pop culture can entertain and enlighten people without effort.",
+    "solution": "\\b(\\w)\\w*\\1\\b",
+    "hint": "Use a capturing group for the first letter, then match it again at the end with a backreference.",
+    "order": 6
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match phone numbers in multiple formats: (xxx) xxx-xxxx, xxx-xxx-xxxx, or xxxxxxxxxx.",
+    "text": "Contact us at (555) 123-4567, 888-555-1234, or 9998887777. Don't dial 55-555-5555 or (123) 45-6789.",
+    "solution": "(?:\\(\\d{3}\\)\\s?|\\d{3}-)\\d{3}-\\d{4}|\\b\\d{10}\\b",
+    "hint": "Use alternation to match the different formats. Each format should have the correct number of digits.",
+    "order": 7
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match all words containing at least 3 consecutive vowels (a, e, i, o, u).",
+    "text": "The beautiful queue outside caused a riot. The audience waited patiently and quietly. Hawaiian beaches are gorgeous.",
+    "solution": "\\b\\w*[aeiou]{3,}\\w*\\b",
+    "hint": "Look for words containing 3 or more consecutive vowels.",
+    "order": 8
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match all money amounts in the format $X.XX or $XX.XX or $XXX.XX.",
+    "text": "Items on sale: Coffee $3.99, Sandwich $12.50, Salad $8.75, Headphones $199.99, Pencil $0.75.",
+    "solution": "\\$\\d{1,3}\\.\\d{2}",
+    "hint": "Match a dollar sign, followed by 1-3 digits, a decimal point, and exactly 2 more digits.",
+    "order": 9
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match all repeated words (immediately repeated, like 'the the').",
+    "text": "She said that that report was was clearly not not properly checked. The the mistakes are obvious when when you look.",
+    "solution": "\\b(\\w+)\\s+\\1\\b",
+    "hint": "Capture a word in a group, then match the same word again using a backreference.",
+    "order": 10
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match all words with internal camel case (like 'camelCase' or 'iPhone').",
+    "text": "JavaScript and TypeScript are popular languages. Many products like iPhone, MacBook, and PowerPoint use camelCase or Pascal case.",
+    "solution": "\\b[a-z]+[A-Z][a-zA-Z]*\\b",
+    "hint": "Match words that start with lowercase letters, then have an uppercase letter, followed by any letters.",
+    "order": 11
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match social security numbers in the format XXX-XX-XXXX, but only if they're valid format (i.e., don't start with 000, 666, or 900-999).",
+    "text": "Valid SSNs: 123-45-6789, 234-56-7890. Invalid formats: 000-12-3456, 666-78-9012, 999-88-7777.",
+    "solution": "(?!000|666|9\\d{2})\\d{3}-\\d{2}-\\d{4}",
+    "hint": "Use a negative lookahead to exclude invalid starting sequences, then match the standard SSN format.",
+    "order": 12
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match all sentences ending with a question mark.",
+    "text": "Is this the correct way? I think it is. What about this sentence? And this one too? Yes, that's right.",
+    "solution": "[^.!?]+\\?",
+    "hint": "Match any characters that aren't sentence endings, followed by a question mark.",
+    "order": 13
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match valid US zip codes (5 digits, or 5 digits plus hyphen plus 4 digits).",
+    "text": "Ship to 90210, 12345-6789, or 60601. Don't use 1234 or 123456 or 12345-67890 as these are invalid formats.",
+    "solution": "\\b\\d{5}(?:-\\d{4})?\\b",
+    "hint": "Match exactly 5 digits, then optionally match a hyphen followed by exactly 4 more digits.",
+    "order": 14
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match all strings formatted as JSON key-value pairs with double-quoted strings (like \"key\": \"value\").",
+    "text": "Config file: \"name\": \"John\", \"age\": 30, \"city\": \"New York\", max_size: 100, 'title': 'Dev'",
+    "solution": "\"[^\"]+\": \"[^\"]+\"",
+    "hint": "Match a double-quoted string, a colon with optional space, and another double-quoted string.",
+    "order": 15
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match all words that are anagrams of 'team' (same letters in any order).",
+    "text": "The mate took his time to tame the meat served at the buffet. He ate the meal with the meta data sheet.",
+    "solution": "\\b(?=\\w*t)(?=\\w*e)(?=\\w*a)(?=\\w*m)\\w{4}\\b",
+    "hint": "Use lookaheads to check for each required letter, then match exactly 4 characters.",
+    "order": 16
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match image file extensions (.jpg, .png, .gif, or .webp).",
+    "text": "Download profile.jpg, banner.png, animation.gif, and icon.webp. Don't download archive.zip or document.pdf.",
+    "solution": "\\.(?:jpg|png|gif|webp)\\b",
+    "hint": "Use a non-capturing group with alternation for the different file extensions.",
+    "order": 17
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match all valid Twitter handles (starts with @, followed by 1-15 alphanumeric characters or underscores).",
+    "text": "Follow us @regex_master, @john123, and @dev_tools. Don't follow @invalid-handle or @waytoolongusernamehere.",
+    "solution": "@[a-zA-Z0-9_]{1,15}\\b",
+    "hint": "Match @ followed by 1 to 15 allowed characters (letters, numbers, underscore).",
+    "order": 18
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match all dates in the format YYYY-MM-DD where the month is valid (01-12).",
+    "text": "Event dates: 2023-01-15, 2023-06-30, 2023-12-25. Invalid dates: 2023-13-01, 2023-00-15, 2023-8-5.",
+    "solution": "\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])",
+    "hint": "First match 4 digits for the year, then a valid month (01-12), then a valid day (01-31).",
+    "order": 19
+  },
+  {
+    "difficulty": "medium",
+    "instructions": "Match all C-style variable declarations (like 'int x = 5;' or 'char name[10];').",
+    "text": "Code snippet: int count = 10; float pi = 3.14; char letter = 'A'; void* pointer; string invalid = \"test\";",
+    "solution": "(?:int|char|float|double|void\\*|long)\\s+\\w+(?:\\[\\d+\\])?(?:\\s*=\\s*[^;]+)?;",
+    "hint": "Match a C data type, followed by a variable name, with optional array size or initialization.",
+    "order": 20
+  }
+]

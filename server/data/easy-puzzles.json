@@ -1,0 +1,162 @@
+[
+  {
+    "difficulty": "easy",
+    "instructions": "Write a regex pattern that matches all email addresses in the text below.",
+    "text": "Contact us at support@regexexplorer.com or send an email to help@regex.dev for assistance. For billing inquiries, reach out to billing@regexexplorer.com. Please do not contact personal@gmail example or fake@@address.",
+    "solution": "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}",
+    "hint": "Look for text that has an @ symbol followed by a domain name with at least one dot.",
+    "order": 1
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all phone numbers in the format (123) 456-7890.",
+    "text": "You can reach us at (555) 123-4567 during business hours or leave a message at (888) 555-1234. Don't call 5551234567 or 555-123-4567 as those aren't monitored.",
+    "solution": "\\(\\d{3}\\)\\s\\d{3}-\\d{4}",
+    "hint": "Look for numbers in parentheses followed by more numbers separated by a hyphen.",
+    "order": 2
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all words that start with 'a' or 'A'.",
+    "text": "An apple a day keeps the doctor away. Always remember that apples are a great source of fiber and antioxidants.",
+    "solution": "\\b[aA][a-zA-Z]*\\b",
+    "hint": "Use word boundaries (\\b) and match words beginning with either 'a' or 'A'.",
+    "order": 3
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all dates in the format MM/DD/YYYY.",
+    "text": "Important dates: 12/25/2023 is Christmas, 01/01/2024 is New Year's Day, and 07/04/2023 is Independence Day. Mark 2023-12-25 on your calendar too.",
+    "solution": "\\d{2}/\\d{2}/\\d{4}",
+    "hint": "Look for two digits, followed by a slash, two more digits, another slash, and four digits.",
+    "order": 4
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all HTML tags in the text.",
+    "text": "Here's some simple HTML: <h1>Title</h1> followed by <p>A paragraph</p> and a <a href='link.html'>link</a>.",
+    "solution": "<[^>]+>",
+    "hint": "Look for text that starts with < and ends with >, with any characters in between that aren't >.",
+    "order": 5
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all words ending with 'ing'.",
+    "text": "I enjoy running, swimming, and cycling in the morning. Singing and dancing are also fun evening activities.",
+    "solution": "\\b\\w+ing\\b",
+    "hint": "Use word boundaries (\\b) and match words that end with 'ing'.",
+    "order": 6
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all numbers between 1 and 100.",
+    "text": "The store has items priced at $5, $25, $99, and $120. The temperature today is between 75 and 80 degrees.",
+    "solution": "\\b([1-9]|[1-9][0-9]|100)\\b",
+    "hint": "Break this down into three parts: single digits, double digits, and the number 100.",
+    "order": 7
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all capitalized words.",
+    "text": "The United States of America is a country. John works at Google in California. He uses Python and JavaScript.",
+    "solution": "\\b[A-Z][a-zA-Z]*\\b",
+    "hint": "Look for words that start with an uppercase letter followed by any letters.",
+    "order": 8
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all words containing the letter 'z'.",
+    "text": "The lazy zebra amazed the zoo visitors by zigzagging through the puzzle maze with pizzazz.",
+    "solution": "\\b\\w*z\\w*\\b",
+    "hint": "Find words that have the letter 'z' anywhere within them.",
+    "order": 9
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all 3-letter words.",
+    "text": "The big dog and the fat cat ran far away but the fox did not see the owl fly by.",
+    "solution": "\\b[a-zA-Z]{3}\\b",
+    "hint": "Use word boundaries and match exactly 3 alphabetical characters.",
+    "order": 10
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all words starting with a vowel (a, e, i, o, u).",
+    "text": "Every apple is unique in appearance and aroma. Often, oranges are easier to identify than unusual exotic fruits.",
+    "solution": "\\b[aeiouAEIOU]\\w*\\b",
+    "hint": "Use word boundaries and start with any vowel (uppercase or lowercase).",
+    "order": 11
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all hashtags (words starting with #).",
+    "text": "Check out our new product #awesome #product #launch. But don't forget the part#number isn't a hashtag.",
+    "solution": "#\\w+",
+    "hint": "Look for # followed by one or more word characters.",
+    "order": 12
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all quoted text inside double quotes.",
+    "text": "He said \"hello world\" and then \"goodbye\" to everyone. The sign reads \"Do not enter\" in bold letters.",
+    "solution": "\"[^\"]*\"",
+    "hint": "Look for content between a pair of double quotes, where the content is anything except another double quote.",
+    "order": 13
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all digits (numbers 0-9).",
+    "text": "My phone number is 555-123-4567 and my zip code is 90210. I was born in 1985.",
+    "solution": "\\d",
+    "hint": "Use the shorthand character class for digits.",
+    "order": 14
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all words containing both 'a' and 'e' in that order.",
+    "text": "Please make a statement about the latest changes to the database. Jane said the cake tastes great.",
+    "solution": "\\b\\w*a\\w*e\\w*\\b",
+    "hint": "Find words that have the letter 'a' followed by the letter 'e' with any characters in between.",
+    "order": 15
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all words starting with 'pro'.",
+    "text": "The project produced professional-quality products promoting progress and prosperity in the program.",
+    "solution": "\\bpro\\w*\\b",
+    "hint": "Use word boundaries and match words that start with 'pro'.",
+    "order": 16
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all time expressions in the format HH:MM (24-hour time).",
+    "text": "The train departs at 08:45 and arrives at 11:30. The meeting starts at 14:15 and ends at 15:45. Please avoid time like 25:70.",
+    "solution": "([01]\\d|2[0-3]):[0-5]\\d",
+    "hint": "First part should be hours (00-23), followed by colon, then minutes (00-59).",
+    "order": 17
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all words exactly 4 letters long.",
+    "text": "This task will help zero guys find code that runs well when they test time-based text data.",
+    "solution": "\\b[a-zA-Z]{4}\\b",
+    "hint": "Use word boundaries and match exactly 4 alphabetical characters.",
+    "order": 18
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all file names with a .jpg extension.",
+    "text": "Download vacation.jpg, profile.png, and document.pdf. Don't forget screenshot.jpg and logo.svg.",
+    "solution": "\\w+\\.jpg\\b",
+    "hint": "Look for words followed by the literal text '.jpg'.",
+    "order": 19
+  },
+  {
+    "difficulty": "easy",
+    "instructions": "Match all words containing consecutive double vowels (aa, ee, ii, oo, uu).",
+    "text": "The committee agreed to meet at noon. The employees need feedback about the bookkeeping. Look at that cool balloon!",
+    "solution": "\\b\\w*(?:aa|ee|ii|oo|uu)\\w*\\b",
+    "hint": "Use a non-capturing group with alternation to find any double vowels within words.",
+    "order": 20
+  }
+]
