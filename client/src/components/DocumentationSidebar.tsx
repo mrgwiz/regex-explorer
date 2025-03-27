@@ -43,6 +43,7 @@ const DocumentationSidebar = () => {
       </div>
       
       <div className="p-4 max-h-[500px] overflow-y-auto">
+        <Tabs>
         <TabsContent value="basics" className={activeTab === "basics" ? "block" : "hidden"}>
           <h3 className="font-medium text-lg mb-3">Regular Expression Basics</h3>
           
@@ -241,6 +242,7 @@ const DocumentationSidebar = () => {
             </div>
           </div>
         </TabsContent>
+        </Tabs>
       </div>
     </div>
   );
