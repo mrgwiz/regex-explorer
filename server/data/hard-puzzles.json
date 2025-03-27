@@ -11,8 +11,8 @@
     "difficulty": "hard",
     "instructions": "Match all words that are palindromes (read the same forward and backward) in the text.",
     "text": "Mom and Dad took their racecar to the civic center. Wow! They saw a radar system and a level playing field. Do geese see God?",
-    "solution": "\\b(\\w)(\\w)?(\\w)?(\\w)?(\\w)?\\4?\\3?\\2?\\1\\b",
-    "hint": "Use capturing groups to match characters, then backreferences to match the same characters in reverse order.",
+    "solution": "\\b(\\w)(\\w)(\\w)?\\2\\1\\b|\\b(\\w)(\\w)(\\w)(\\w)?\\3\\2\\1\\b|\\b(\\w)(\\w)(\\w)(\\w)(\\w)?\\4\\3\\2\\1\\b|\\b\\w\\b",
+    "hint": "Break this down by palindrome length. Single-letter words are palindromes, and for others, capture letters from the outside in, then refer back to them in reverse order.",
     "order": 2
   },
   {
@@ -97,10 +97,10 @@
   },
   {
     "difficulty": "hard",
-    "instructions": "Match all strings where a word is repeated in reverse within the same sentence (like 'level level').",
-    "text": "Words and their reversals: level level, part trap, name eman, dear read, step pets, live evil, time emit.",
-    "solution": "\\b(\\w+)\\b[^.!?]*\\b(\\1|\\w*(?:(?<=(.)(.*))\\3\\2\\1))\\b",
-    "hint": "Capturing a word and then either matching it exactly or its reverse using a complex backreference pattern.",
+    "instructions": "Match all words that contain exactly the same letters as 'note' in any order.",
+    "text": "The tone of the conversation was noted by everyone. They took note of what was said next. One might say it was neat.",
+    "solution": "\\b(?=\\w*n)(?=\\w*o)(?=\\w*t)(?=\\w*e)(?!\\w*[^note])\\w{4}\\b",
+    "hint": "Use positive lookaheads to check for each required letter, a negative lookahead to ensure no other letters are present, and match exactly 4 characters.",
     "order": 13
   },
   {
@@ -113,10 +113,10 @@
   },
   {
     "difficulty": "hard",
-    "instructions": "Match all words that are anagrams of each other in the text.",
-    "text": "Words like listen and silent are anagrams. So are earth and heart, night and thing, secure and rescue.",
-    "solution": "\\b(?:(\\w+)(?=.*\\b(?!(\\1))(?=(?:\\w*(?:(?:(?<=[a-z])([a-z]))\\3)*){0})\\w+\\b))+\\b",
-    "hint": "This requires an advanced technique using lookaheads and character counting to identify words with the same letters.",
+    "instructions": "Match strings that contain exactly balanced pairs of angle brackets (< and >) with potential nesting.",
+    "text": "Examples: <balanced>, <also <nested> balanced>, <<empty>>, <unbalanced, ><separate>, not<>balanced",
+    "solution": "\\b[^<>]*(?:<[^<>]*(?:<[^<>]*>[^<>]*)*>[^<>]*)*\\b",
+    "hint": "Start by matching simple brackets, then build to handle nesting. Pay attention to word boundaries.",
     "order": 15
   },
   {
@@ -145,10 +145,10 @@
   },
   {
     "difficulty": "hard",
-    "instructions": "Match all strings that contain a prime number between 2 and 100.",
-    "text": "Numbers: 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101",
-    "solution": "\\b(?:2|3|5|7|11|13|17|19|23|29|31|37|41|43|47|53|59|61|67|71|73|79|83|89|97)\\b",
-    "hint": "Create an alternation of all prime numbers in the specified range.",
+    "instructions": "Match numbers that follow a valid version number pattern (like 1.0.0, 2.3.5, or 10.2.1).",
+    "text": "Software versions: 1.0.0, 2.3.5, 10.2.1, 0.1.2, 1.0, 1.2.3.4, 01.2.3, 1.02.3, v1.2.3",
+    "solution": "\\b[1-9]\\d*\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\b",
+    "hint": "Match digits for major version (must not start with 0 unless it is 0), followed by period, minor version, period, and patch version.",
     "order": 19
   },
   {

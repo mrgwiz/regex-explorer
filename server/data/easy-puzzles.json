@@ -12,7 +12,7 @@
     "instructions": "Match all phone numbers in the format (123) 456-7890.",
     "text": "You can reach us at (555) 123-4567 during business hours or leave a message at (888) 555-1234. Don't call 5551234567 or 555-123-4567 as those aren't monitored.",
     "solution": "\\(\\d{3}\\)\\s\\d{3}-\\d{4}",
-    "hint": "Look for numbers in parentheses followed by more numbers separated by a hyphen.",
+    "hint": "Look for numbers in parentheses followed by a space, then three digits, a hyphen, and four more digits.",
     "order": 2
   },
   {
@@ -52,7 +52,7 @@
     "instructions": "Match all numbers between 1 and 100.",
     "text": "The store has items priced at $5, $25, $99, and $120. The temperature today is between 75 and 80 degrees.",
     "solution": "\\b([1-9]|[1-9][0-9]|100)\\b",
-    "hint": "Break this down into three parts: single digits, double digits, and the number 100.",
+    "hint": "Break this down into three parts: single digits (1-9), double digits (10-99), and the number 100.",
     "order": 7
   },
   {
